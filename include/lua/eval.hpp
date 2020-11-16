@@ -1,7 +1,6 @@
 #pragma once
 
-extern "C"
-{
+extern "C" {
 #include <lua.h>
 #include <lauxlib.h>
 #include <lualib.h>
@@ -9,19 +8,19 @@ extern "C"
 
 #include <string>
 
-namespace color_coded
-{
-  namespace lua
-  {
-    lua_State* state(lua_State * const lua = nullptr)
-    {
-      static lua_State *lua_{};
-      if(lua)
-      { lua_ = lua; }
-      return lua_;
-    }
+namespace color_coded {
+namespace lua {
 
-    void eval(std::string const &str)
-    { luaL_dostring(state(), str.c_str()); }
-  }
+lua_State* state(lua_State * const lua = nullptr) {
+	static lua_State* lua_{};
+	if (lua) { lua_ = lua; }
+
+	return lua_;
 }
+
+void eval(std::string const& str) {
+	luaL_dostring(state(), str.c_str());
+}
+
+} // namespace lua
+} // namespace color_coded

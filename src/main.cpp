@@ -1,5 +1,4 @@
-extern "C"
-{
+extern "C" {
   #include <lua.h>
   #include <lauxlib.h>
   #include <lualib.h>
@@ -66,7 +65,7 @@ namespace color_coded
 
   static int api_version(lua_State * const lua)
   {
-    std::size_t constexpr const version{ 0xba89eb5 };
+    std::size_t constexpr const version{ 0x16e71d6 };
     lua_pushinteger(lua, version);
     return 1;
   }

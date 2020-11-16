@@ -1,2 +1,5 @@
 -Iinclude
 -Ilib/jest/include
+-I/usr/include/c++/9
+-I/usr/lib/llvm-10/include
+-I/usr/include/lua5.2

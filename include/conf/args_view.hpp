@@ -4,39 +4,34 @@
 
 #include "load.hpp"
 
-namespace color_coded
-{
-  namespace conf
-  {
-    class args_view
-    {
-      public:
-        using view_t = std::vector<char const *>;
-        using iterator = view_t::iterator;
-        using const_iterator = view_t::const_iterator;
-        using size_type = std::size_t;
+namespace color_coded {
+namespace conf {
 
-        args_view() = delete;
-        args_view(args_t const &args)
-        {
-          std::transform(std::begin(args), std::end(args),
-                         std::back_inserter(view_), [](auto const &s)
-                         { return s.c_str(); });
-        }
+class args_view {
+public:
+	using view_t         = std::vector<char const*>;
+	using iterator       = view_t::iterator;
+	using const_iterator = view_t::const_iterator;
+	using size_type      = std::size_t;
 
-        const_iterator begin() const
-        { return view_.begin(); }
-        const_iterator end() const
-        { return view_.end(); }
+	args_view() = delete;
+	args_view(args_t const& args) {
+		std::transform(std::begin(args), std::end(args), std::back_inserter(view_),
+			[] (auto const& s) {
+				return s.c_str();
+			});
+	}
 
-        char const * const * data() const
-        { return view_.data(); }
+	const_iterator begin() const { return view_.begin(); }
+	const_iterator end() const { return view_.end(); }
 
-        size_type size() const
-        { return view_.size(); }
+	char const* const* data() const { return view_.data(); }
 
-      private:
-        view_t view_;
-    };
-  }
-}
+	size_type size() const { return view_.size(); }
+
+private:
+	view_t view_;
+};
+
+} // namespace conf
+} // namespace color_coded
