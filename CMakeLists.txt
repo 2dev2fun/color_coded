@@ -10,7 +10,7 @@ if(NOT CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE RELEASE)
 endif()
 
-find_package(Boost 1.71 COMPONENTS filesystem REQUIRED)
+find_package(Boost 1.65 COMPONENTS filesystem REQUIRED)
 link_libraries(${Boost_LIBRARIES})
 include_directories(${Boost_INCLUDE_DIR})
 
