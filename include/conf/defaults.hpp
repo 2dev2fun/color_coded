@@ -12,8 +12,8 @@ using args_t = std::vector<std::string>;
 
 inline auto constexpr clang_include      = "-isystem/opt/llvm/include";
 inline auto constexpr clang_include_cpp  = "-isystem/opt/llvm/include/c++/v1";
-inline auto constexpr clang_include_lib  = "-isystem/opt/llvm/lib/clang/10.0.0/include";
-inline auto constexpr clang_resource_dir = "-resource-dir=/opt/llvm/lib/clang/10.0.0";
+inline auto constexpr clang_include_lib  = "-isystem/opt/llvm/lib/clang/11.0.0/include";
+inline auto constexpr clang_resource_dir = "-resource-dir=/opt/llvm/lib/clang/11.0.0";
 
 /* Prefixed onto every set of args to make life easier. */
 inline args_t pre_constants(std::string const &filetype) {
